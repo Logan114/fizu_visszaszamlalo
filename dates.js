@@ -1,5 +1,6 @@
-const d = new Date()
-const year = d.getFullYear()
+export default class Dates{
+    const d = new Date()
+    const year = d.getFullYear()
 let month = d.getMonth() //nulláról számolja a hónapokat, pl szeptember szerinte 08
 let nextMonth = month+2 //következő hónap, +1 mert ugye nulláról számolja
 let day = 0
@@ -23,28 +24,4 @@ payDays.forEach(day => {
 let legkorabbi = Math.min(...hetkoznapok)
 let legkesobb = Math.max(...hetkoznapok)
 
-function SzelErt(szelsoertek) {
-    return new Date (`${year}-${nextMonth}-${szelsoertek}`)
 }
-
-function milisec(fizunap) {
-    return fizunap - d
-}
-function napok(fizunap) {
-    return Math.ceil(fizunap/(1000 * 60 * 60 * 24)) // milisec percre, perc órára, óra napra
-}
-function orak(fizunap) {
-    return Math.floor((fizunap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-}
-function perc(fizunap) {
-    return Math.floor((fizunap % (1000 * 60 * 60)) / (1000 * 60))
-}
-
-function minden(fizunap){
-    return (`${napok(fizunap)} nap ${orak(fizunap)} óra ${perc(fizunap)} perc`)
-}
-
-let leghamarabbMs = milisec(SzelErt(legkorabbi))
-let legkesobbMs = milisec(SzelErt(legkesobb))
-
-console.log(minden(leghamarabbMs))
