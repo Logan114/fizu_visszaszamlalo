@@ -1,4 +1,5 @@
 import Leghamarabb from "./Leghamarabb.js";
+
 export default class LeghamarabbKiiras {
   constructor() {
     this.leghamarabb = new Leghamarabb();
@@ -12,5 +13,6 @@ export default class LeghamarabbKiiras {
     daysHTML.html(`<p>${this.leghamarabb.days} Nap</p>`);
     hoursHTML.html(`<p>${this.leghamarabb.hours} Óra</p>`);
     minutesHTML.html(`<p>${this.leghamarabb.minutes} perc*</p>`);
+    console.log(this.leghamarabb);
   }
 }

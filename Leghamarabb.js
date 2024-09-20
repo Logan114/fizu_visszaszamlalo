@@ -7,11 +7,11 @@ export default class Leghamarabb {
     this.calculateDays();
     this.calculateHours();
     this.calculateMinutes();
-    this.mindenM()
   }
 
   calculateMillisec() {
     const legkorabbiDatum = this.Dates.SzelErt(this.Dates.legkorabbi);
+    console.log(`legkorabbiDatum ${legkorabbiDatum}`);
     this.mili = legkorabbiDatum - new Date();
   }
 
@@ -27,10 +27,5 @@ export default class Leghamarabb {
 
   calculateMinutes() {
     this.minutes = Math.floor((this.mili % (1000 * 60 * 60)) / (1000 * 60));
-  }
-  mindenM() {
-    this.days
-    this.hours
-    this.minutes
   }
 }

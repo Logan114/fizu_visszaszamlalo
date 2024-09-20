@@ -2,8 +2,8 @@ export default class Dates {
   constructor() {
     const d = new Date();
     this.year = d.getFullYear();
-    this.month = d.getMonth(); // Months are zero-based
-    this.nextMonth = this.month + 2; // Next month (add 2)
+    this.month = d.getMonth();
+    this.nextMonth = this.month + 1; // Add 1 for the next month
     this.daysoftheweek = [
       "Vasárnap",
       "Hétfő",
@@ -31,21 +31,17 @@ export default class Dates {
     let weekdays = [];
     this.payDays.forEach((day) => {
       const nextDate = new Date(this.year, this.nextMonth, day);
-      if (nextDate.getDay() <= 5 && nextDate.getDay() >= 1) {
+      const dayOfWeek = nextDate.getDay();
+      if (dayOfWeek !== 0 && dayOfWeek !== 1 && dayOfWeek !== 6) {
         weekdays.push(day);
+        console.log(day);
+        console.log(nextDate, dayOfWeek);
       }
     });
     return weekdays;
   }
 
   SzelErt(szelsoertek) {
-    return new Date(`${this.year}-${this.nextMonth}-${szelsoertek}`);
-  }
-
- 
-  minden(fizunap) {
-    return `${this.napok(fizunap)} nap ${this.orak(fizunap)} óra ${this.perc(
-      fizunap
-    )} perc`;
+    return new Date(this.year, this.nextMonth, szelsoertek);
   }
 }
