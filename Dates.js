@@ -3,7 +3,7 @@ export default class Dates {
     const d = new Date();
     this.year = d.getFullYear();
     this.month = d.getMonth();
-    this.nextMonth = this.month + 1; // Add 1 for the next month
+    this.nextMonth = this.month + 1;
     this.daysoftheweek = [
       "Vasárnap",
       "Hétfő",
