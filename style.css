@@ -1,0 +1,11 @@
+.countdown {
+    font-size: 1cm;
+
+}
+*{
+    background-color: black;
+    color: white;
+}
+.countdown {
+    gap: 21px;
+}
