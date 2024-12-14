@@ -1,8 +1,8 @@
-import Dates from "./Dates.js";
+import Dates from './Dates.js'; // Import the Dates class
 
 export default class Leghamarabb {
   constructor() {
-    this.Dates = new Dates();
+    this.Dates = new Dates(); // Instantiate the Dates class
     this.calculateMillisec();
     this.calculateDays();
     this.calculateHours();
@@ -10,8 +10,7 @@ export default class Leghamarabb {
   }
 
   calculateMillisec() {
-    const legkorabbiDatum = this.Dates.SzelErt(this.Dates.legkorabbi);
-    console.log(`legkorabbiDatum ${legkorabbiDatum}`);
+    const legkorabbiDatum = this.Dates.get10thDate();
     this.mili = legkorabbiDatum - new Date();
   }
 
